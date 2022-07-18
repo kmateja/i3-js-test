@@ -1,0 +1,200 @@
+/*------- mixins -------*/
+.transition (@element: color, @speed: .3s) {
+	transition: @arguments;
+	-webkit-backface-visibility: hidden;
+	-webkit-tap-highlight-color: transparent;
+}
+.grayscale (@bw: 100%) {
+	filter: grayscale(@bw);
+	-webkit-filter: grayscale(@bw);
+	-moz-filter: grayscale(@bw);
+}
+.text-shadow (@color, @x: 1px, @y: 1px, @blur: 0px) {
+	text-shadow: @x @y @blur @color;
+}
+.gradient(@startColor: #eee, @endColor: white) {
+	background: @startColor;
+	background-image: linear-gradient(180deg, @startColor 0%, @endColor 100%);
+	background-image: -webkit-linear-gradient(180deg, @startColor 0%, @endColor 100%);
+	background-image: -moz-linear-gradient(@startColor 0%, @endColor 100%);
+	background-image: -ms-linear-gradient(180deg, @startColor 0%, @endColor 100%);
+}
+.horizontal-gradient (@startColor: #eee, @endColor: white) {
+ 	background-color: @startColor;
+	background-image: -webkit-linear-gradient(90deg, @startColor, @endColor);
+	background-image: -ms-linear-gradient(90deg, @startColor, @endColor);
+	background-image: linear-gradient(90deg, @startColor, @endColor);
+}
+.font(@fontSize, @fontLineHeight, @fontType) {
+	font-size: @fontSize;
+	line-height: @fontLineHeight;
+	font-family: @fontType;
+}
+.pseudo(@width, @height) {
+	content:"";
+	position: absolute;
+	display: block;
+	width:@width;
+	height:@height;
+}
+.animation (@name, @duration: 300ms, @delay: 0, @ease: ease) {
+	-webkit-animation: @name @duration @delay @ease;
+	-moz-animation:    @name @duration @delay @ease;
+	-ms-animation:     @name @duration @delay @ease;
+}
+.transform(@string){
+	transform: @string;
+	-webkit-transform: @string;
+	-ms-transform: 		 @string;
+}
+.scale (@factor) {
+	transform: scale(@factor);
+	-webkit-transform: scale(@factor);
+	-ms-transform: 		 scale(@factor);
+}
+.scaleX(@factor) {
+	transform: scaleX(@factor);
+	-webkit-transform: scaleX(@factor);
+	-ms-transform: 		 scaleX(@factor);
+}
+.scaleY (@factor) {
+	transform: scaleY(@factor);
+	-webkit-transform: scaleY(@factor);
+	-ms-transform: scaleY(@factor);
+}
+.rotate (@deg) {
+	transform: rotate(@deg);
+	-webkit-transform: rotate(@deg);
+	-ms-transform: 		 rotate(@deg);
+}
+.skew (@deg, @deg2) {
+	transform: skew(@deg, @deg2);
+	-webkit-transform: skew(@deg, @deg2);
+	-ms-transform: skew(@deg, @deg2);
+}
+.translate (@x, @y:0) {
+	transform: translate(@x, @y);
+	-webkit-transform: translate(@x, @y);
+	-ms-transform: translate(@x, @y);
+}
+.translate3d (@x, @y: 0, @z: 0) {
+	transform: translate3d(@x, @y, @z);
+	-webkit-transform: translate3d(@x, @y, @z);
+	-ms-transform: translate3d(@x, @y, @z);
+}
+.perspective (@value: 1000) {
+	perspective: 		@value;
+	-webkit-perspective: 	@value;
+}
+.clear {
+	*zoom: 1; clear:both;
+	&:before, &:after {content:""; display: table; }
+	&:after { clear: both; }
+}
+.placeholder(@color,@focusColor) {
+	&::-webkit-input-placeholder { color: @color; }
+	&:-ms-input-placeholder { color: @color; }
+	&::-moz-placeholder { color: @color; }
+	&:focus {
+		&::-webkit-input-placeholder { color: @focusColor; }
+		&:-ms-input-placeholder { color: @focusColor; }
+		&::-moz-placeholder { color: @focusColor; }
+	}
+}
+.shadow { content:""; position: absolute; left: 35px; right: 35px; top: 20px; bottom: 5px; box-shadow: 0px 10px 65px rgba(0,0,0,.6); }
+.lloader {
+	background: #fff url(images/loader.svg) no-repeat center center;
+	img { opacity: 0; .transition(opacity); }
+	&.loaded {
+		background: #fff;
+		img { opacity: 1; }
+	}
+}
+/*------- /mixins -------*/
+
+
+/*------- fonts -------*/
+@font-face {
+	font-family: 'ProximaNovaRegular';
+	src: url('fonts/ProximaNova-Regular.woff') format('woff'),  url('fonts/ProximaNova-Regular.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+@font-face {
+	font-family: 'ProximaNova-Extrabold';
+	src: url('fonts/ProximaNova-Extrabold.woff') format('woff'),  url('fonts/ProximaNova-Extrabold.woff2') format('woff2');
+	font-weight: bold;
+	font-style: normal;
+	font-display: block;
+}
+@font-face {
+	font-family: 'ProximaNova-Light';
+	src: url('fonts/ProximaNova-Light.woff') format('woff'),  url('fonts/ProximaNova-Light.woff2') format('woff2');
+	font-weight: normal;
+	font-style: normal;
+	font-display: block;
+}
+@font-face {
+    font-family: 'icomoon';
+    src: url('fonts/icomoon.woff?4vq4o9') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+}
+/*------- /fonts -------*/
+
+
+/*------- site vars -------*/
+@pageWidth: 990px;
+@fontSize: 13px;
+@lineHeight: 22px;
+@textColor: #333;
+@borderRadius: 3px;
+
+@linkColor: #333;
+@linkHoverColor: #000;
+
+@primaryColor: #ccc;
+@secondaryColor: #74ad11;
+@red: #b00800;
+@blue: #5B70F2;
+@black: #000;
+@gray: #696969;
+@lightPink: #F4B1AB;
+@darkPink: #B74355;
+@orange: #d89724;
+@white: #fff;
+@green: #74ad11;
+@yellow: #e9ec00;
+@borderColor: #EBE5E1;
+
+@font: "ProximaNovaRegular", Arial, Helvetica, sans-serif;
+@font2: "ProximaNova-Extrabold", Arial, Helvetica, sans-serif;
+@font3: "ProximaNova-Light", Arial, Helvetica, sans-serif;
+@fonti: "icomoon";
+
+@errorColor: @red;
+@warningColor: @orange;
+@successColor: @green;
+
+@l: 1550px;
+@t: 1300px;
+@tp: 990px;
+@m: 700px;
+/*------- /site vars -------*/
+
+
+/*
+	LEGEND
+	screen sizes:
+
+	- normalize
+	- helpers
+	- tables
+	- selectors
+	- forms
+	- info messages
+	- buttons
+	- navigation
+*/

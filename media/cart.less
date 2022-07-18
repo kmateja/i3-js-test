@@ -1,0 +1,27 @@
+@import "defaults.less";
+
+/*------- credit card payment -------*/
+.cc_expire input, .cc_cvv input{padding: 0 5px; text-align: center;}
+.cc_installments{max-width: 170px;
+	.chzn-container-single .chzn-single span{color: #000;}
+}
+.cc_type{position: absolute; padding-left: 10px !important;}
+
+.webshop_widget_payment_advanced{
+	position: relative; padding-top: 6px;
+	#field-error-cc{
+		left: 100px;
+		&:after{left: 7px;}
+	}
+	label{width: 100% !important; display: block !important; font-size: 16px !important;}
+	div{padding-bottom: 8px; position: relative;}
+	.error{left: 130px; right: auto;}
+	.clear{padding: 0;}
+	#field-cc_cvv{margin-right: 8px;}
+	a{color: @textColor;}
+	input[type=text]{
+		&:hover, &:focus{background: #fff; color: #000;}
+	}
+}
+
+/*------- /credit card payment -------*/

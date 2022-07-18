@@ -1,0 +1,60 @@
+@import "defaults.less";
+
+
+/*------- helpers -------*/
+.float-left { float: left; }
+.float-right { float: right; }
+.strong { font-weight: bold; }
+.italic { font-style: italic; }
+.uppercase { text-transform: uppercase; }
+
+.first{margin-left:0 !important;}
+.last{margin-right:0 !important;}
+
+.image-left, .alignleft { float: left; margin: 5px 20px 10px 0px; }
+.image-right, .alignright { float: right; margin: 5px 0px 10px 20px; }
+
+.align-left {text-align:left;}
+.align-right {text-align:right;}
+.center {text-align:center;}
+
+.underline { text-decoration:underline; }
+.nounderline { text-decoration:none; }
+.rounded { border-radius: @borderRadius; }
+
+.red {color: @red;}
+.green {color: @green;}
+.orange {color: @orange;}
+
+.first-title { margin-top: 0; padding-top: 0; }
+/*------- /helpers -------*/
+
+/*------- selectors -------*/
+* { margin: 0; padding: 0; border: none; }
+body {background: #fff; padding: 10px 15px; color: @textColor; .font(@fontSize, @lineHeight, @font); }
+table { border-spacing: 0; border: none; }
+a {
+	color: @linkColor;text-decoration: underline; .transition();
+	&:hover { text-decoration: underline;color: @linkHoverColor; }
+}
+ul, ol {margin: 0px 0px 10px 35px;padding: 0px;}
+ol { margin-left: 40px; }
+h1, h2, h3, h4 { 
+	font-weight: bold; padding-bottom: 15px; 
+	a, a:hover { text-decoration:none; }
+}
+h1 { font-size: 30px; line-height: 26px; }
+h2 { font-size:20px; line-height: 23px; }
+h3 { font-size:17px; line-height: 18px; }
+h4 { font-size:16px; line-height:21px; }
+p { padding-bottom: 10px; }
+/*------- /selectors -------*/
+
+/*------- tables -------*/
+.table { 
+	width: 100%; border-spacing:0; margin: 10px 0px 20px; 
+	th { font-weight: bold; font-size: 14px; text-align: left; padding: 6px 0; border-bottom: 1px solid @gray; }
+	td { border-bottom: 1px solid @gray; padding: 6px 0; }
+	&.stripe tbody tr:nth-child(even) { background: #E9E9E9; }
+}
+/*------- /tables -------*/
